@@ -63,35 +63,35 @@ void proto_reg_handoff_ssh(void);
 
 /* proto data */
 
-// struct ssh_peer_data {
-//     guint   counter;
+struct ssh_peer_data {
+    guint   counter;
 
-//     guint32 frame_version_start;
-//     guint32 frame_version_end;
+    guint32 frame_version_start;
+    guint32 frame_version_end;
 
-//     guint32 frame_key_start;
-//     guint32 frame_key_end;
-//     int frame_key_end_offset;
+    guint32 frame_key_start;
+    guint32 frame_key_end;
+    int frame_key_end_offset;
 
-//     gchar*  kex_proposal;
+    gchar*  kex_proposal;
 
-//     /* For all subsequent proposals,
-//        [0] is client-to-server and [1] is server-to-client. */
-// #define CLIENT_TO_SERVER_PROPOSAL 0
-// #define SERVER_TO_CLIENT_PROPOSAL 1
+    /* For all subsequent proposals,
+       [0] is client-to-server and [1] is server-to-client. */
+#define CLIENT_TO_SERVER_PROPOSAL 0
+#define SERVER_TO_CLIENT_PROPOSAL 1
 
-//     gchar*  mac_proposals[2];
-//     gchar*  mac;
-//     gint    mac_length;
+    gchar*  mac_proposals[2];
+    gchar*  mac;
+    gint    mac_length;
 
-//     gchar*  enc_proposals[2];
-//     gchar*  enc;
+    gchar*  enc_proposals[2];
+    gchar*  enc;
 
-//     gchar*  comp_proposals[2];
-//     gchar*  comp;
+    gchar*  comp_proposals[2];
+    gchar*  comp;
 
-//     gint    length_is_plaintext;
-// };
+    gint    length_is_plaintext;
+};
 
 struct ssh_flow_data {
     guint   version;
